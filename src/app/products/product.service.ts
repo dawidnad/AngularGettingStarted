@@ -17,10 +17,6 @@ constructor(private _http: HttpClient) {
 
   getProduct(): Observable<IProduct[]>  {
     return this._http.get<IProduct[]>(this._productUrl)
-            .do(data => {
-              console.log('All: ' + JSON.stringify(data));
-            console.log('Data.Length' + data.length);
-            })
             .catch(this.handlerError);
   }
 
